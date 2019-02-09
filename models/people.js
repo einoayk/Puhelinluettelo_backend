@@ -4,7 +4,7 @@ const uniqueValidator = require('mongoose-unique-validator')
 mongoose.set('useFindAndModify', false)
 mongoose.set('useCreateIndex', true)
     
-const url = process.env.MONGODB_URI
+const url = 'mongodb://fullstack:salaisuus1@ds163164.mlab.com:63164/fullstack2019-people'
 
 console.log('connecting to', url)
 
