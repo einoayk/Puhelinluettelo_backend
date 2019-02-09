@@ -51,7 +51,7 @@ app.get('/api/persons', (req, res) => {
 })
 
 app.get('/info', (req, res) => {
-    Person.find({}).then(persons =>{
+    Person.find({}).then(persons => {
         res.send(`PUhelinluettelossa ${persons.length} henkilön tiedot ${Date()}`)
     })
 })
@@ -130,7 +130,7 @@ const errorHandler = (error, request, response, next) => {
     if (error.name === 'CastError' && error.kind == 'ObjectId') {
         return response.status(400).send({ error: 'malformatted id'})
     } else if (error.name === 'ValidationError') {
-        return response.status(400).send({ error: 'name not unique'})
+        return response.status(400).json({ error: error.message })
     }
 
     next(error)
