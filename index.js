@@ -139,7 +139,7 @@ const errorHandler = (error, request, response, next) => {
 app.use(errorHandler)
 
 
-const PORT = process.env.PORT 
+const PORT = 'mongodb://fullstack:salaisuus1@ds163164.mlab.com:63164/fullstack2019-people' 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })
