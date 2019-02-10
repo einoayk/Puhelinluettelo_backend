@@ -4,13 +4,13 @@ const uniqueValidator = require('mongoose-unique-validator')
 mongoose.set('useFindAndModify', false)
 mongoose.set('useCreateIndex', true)
     
-const url = 'mongodb://fullstack:salaisuus1@ds163164.mlab.com:63164/fullstack2019-people'
+const url = process.env.MONGODB_URI
 
 console.log('connecting to', url)
 
 mongoose.connect(url, { useNewUrlParser: true })
     .then(result => {
-        console.log('connected to MondoDB')
+        console.log('connected to MongoDB')
     })
     .catch((error) => {
         console.log('error connection to MongoDB:', error.message)
